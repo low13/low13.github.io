@@ -1,60 +1,101 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <title>low13</title>
-        <style>
-          body {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-            Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-            margin-left: 4em;
-          }
+      <title>low13</title>
+      <style>
+        body {
+          font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+          margin-left: 4em;
+        }
 
-          p {
-            margin-bottom: -1em;
-          }
+        p {
+          margin-bottom: -1em;
+        }
 
-          a {
-            font-size: larger;
-          }
+        a {
+          font-size: larger;
+        }
 
-          div {
-            margin-bottom: 2em;
-          }
+        div {
+          margin-bottom: 2em;
+        }
 
-          img {
-            width: 15%;
-            height: auto;
-            border: solid 0.15em;
-            margin-top: 1em;
-            transition: width 0.3s ease;
-          }
+        img {
+          width: 10em;
+          height: auto;
+          border: solid 0.15em;
+          margin-top: 1em;
+          transition: width 0.3s ease;
+        }
 
-          img:hover {
-            width: 20%;
-            height:auto;
-          }
-        </style>
+        img:hover {
+          width: 12em;
+          height: au/to;
+        }
+
+        button {
+          background: none;
+          border: solid;
+          font-weight: bold;
+          position: fixed;
+          top: 1em;
+          right: 1em;
+          width: 12em;
+          height: 3em;
+          cursor: pointer;
+        }
+      </style>
     </head>
-    <body>
+  <body>
+    <button onclick="changeTheme();" id="changeTheme">Dark Theme</button>
     <h1>Hello, traveller!</h1>
-      <div>
-        <p>It looks like you've stumbled upon an unknown page on the web.</p>
-        <p>But don't worry, you came to the right place!</p>
-      </div>
-      <div>
-        <p>
-          This webpage is a display for my simple projects that you can access
-          <strong> right now</strong>!
-        </p>
-        <p>Just click one of the images below and you're good to go!</p>
-      </div>
-      <div>
-        <img src="tictactoe/preview.png" id="img_tictactoe">
-        <script>
-          document.getElementById("img_tictactoe").addEventListener("click", () => {
-            window.location.assign("tictactoe")
-          });
-        </script>
-      </div>
-    </body>
+    <div>
+      <p>It looks like you've stumbled upon an unknown page on the web.</p>
+      <p>But don't worry, you came to the right place!</p>
+    </div>
+    <div>
+      <p>
+        This webpage is a display for my simple projects that you can access
+        <strong> right now</strong>!
+      </p>
+      <p>Just click one of the images below and you're good to go!</p>
+    </div>
+    <div>
+      <img src="tictactoe/preview.png" id="img_tictactoe">
+      <script>
+        document.getElementById("img_tictactoe").addEventListener("click", () => {
+          window.location.assign("tictactoe")
+        });
+      </script>
+    </div>
+    <script>
+      if (!localStorage.getItem("theme")) { localStorage.setItem("theme", "light"); }
+
+      const changeTheme = () => {
+        if (localStorage.getItem("theme") === "light") {
+
+          document.body.style.background = "#222";
+          document.body.style.color = "white";
+          document.getElementById("changeTheme").style.color = "lightgray";
+
+          localStorage.setItem("theme", "dark");
+
+        } else if (localStorage.getItem("theme") === "dark") {
+
+          document.body.style.background = "#fff";
+          document.body.style.color = "black";
+          document.getElementById("changeTheme").style.color = "black";
+
+          localStorage.setItem("theme", "light");
+        }
+      };
+
+      if (localStorage.getItem("theme") === "dark") {
+        document.body.style.background = "#222";
+        document.body.style.color = "white";
+        document.getElementById("changeTheme").style.color = "lightgray";
+      }
+    </script>
+  </body>
 </html>
