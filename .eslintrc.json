@@ -1,0 +1,17 @@
+{
+    "env": {
+        "es6": true
+    },
+    "parserOptions": {
+        "ecmaVersion": "latest"
+    },
+    "rules": {
+        "semi": "error",
+        "no-trailing-spaces": "error",
+        "no-var": "warn",
+        "prefer-const": "warn",
+        "quotes": ["warn", "double"],
+        "indent": ["warn", 4],
+        "no-unused-vars": "warn"
+    }
+}

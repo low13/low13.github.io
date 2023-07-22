@@ -23,20 +23,21 @@
 
         img {
           width: 10em;
-          height: auto;
+          height: 10em;
           border: solid 0.15em;
           margin-top: 1em;
+          margin-right: .5em;
           transition: width 0.3s ease;
         }
 
         img:hover {
           width: 12em;
-          height: au/to;
+          height: auto;
         }
 
         button {
           background: none;
-          border: solid;
+          border: solid .2em;
           font-weight: bold;
           position: fixed;
           top: 1em;
@@ -63,9 +64,13 @@
     </div>
     <div>
       <img src="tictactoe/preview.png" id="img_tictactoe">
+      <img src="converter/temperature/preview.png" id="img_temperature">
       <script>
         document.getElementById("img_tictactoe").addEventListener("click", () => {
           window.location.assign("tictactoe")
+        });
+        document.getElementById("img_temperature").addEventListener("click", () => {
+          window.location.assign("converter/temperature")
         });
       </script>
     </div>
@@ -75,9 +80,10 @@
       const changeTheme = () => {
         if (localStorage.getItem("theme") === "light") {
 
-          document.body.style.background = "#222";
+          document.body.style.background = "#111";
           document.body.style.color = "white";
-          document.getElementById("changeTheme").style.color = "lightgray";
+          document.getElementById("changeTheme").style.color = "white";
+          document.getElementById("changeTheme").textContent = "Light Theme";
 
           localStorage.setItem("theme", "dark");
 
@@ -86,6 +92,7 @@
           document.body.style.background = "#fff";
           document.body.style.color = "black";
           document.getElementById("changeTheme").style.color = "black";
+          document.getElementById("changeTheme").textContent = "Dark Theme";
 
           localStorage.setItem("theme", "light");
         }

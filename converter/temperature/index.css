@@ -1,0 +1,35 @@
+body {
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    white-space: pre-line;
+    text-align: center;
+}
+
+input {
+    font-size: 1em;
+    height: 2.5em;
+    margin: .2em;
+    border: black solid .05em;
+    text-align: center;
+}
+
+input::placeholder {
+    color: black;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.2em;
+}
+
+button {
+    background-color: white;
+    font-size: 1.5em;
+    width: 8em;
+    height: 2em;
+    margin: .1em;
+    border: solid .05em;
+    cursor: pointer;
+}
